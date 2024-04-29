@@ -1,7 +1,7 @@
 import ProductCard from './ProductCard'
 import { useLoaderData } from 'react-router-dom'
 
-export async function loader() {
+export async function getProducts() {
   const res = await fetch('https://fakestoreapi.com/products')
   const data = await res.json()
   console.log(data)
