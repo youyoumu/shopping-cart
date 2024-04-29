@@ -10,6 +10,32 @@ export default function Index() {
               Shopping Cart
             </Link>
             <Link to="/products">Products</Link>
+            <div className="dropdown dropdown-hover">
+              <div tabIndex={0} role="button">
+                Category
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 text-base-content"
+              >
+                <li>
+                  <Link to="/products/category/jewelery">Jewelery</Link>
+                </li>
+                <li>
+                  <Link to="/products/category/electronics">Electronics</Link>
+                </li>
+                <li>
+                  <Link to="/products/category/men's clothing">
+                    {`Men's Clothing`}
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products/category/women's clothing">
+                    {`Women's Clothing`}
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="flex-none">
             <div className="dropdown dropdown-end">
