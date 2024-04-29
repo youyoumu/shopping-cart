@@ -7,6 +7,7 @@ import ErrorPage from './ErrorPage'
 import Products from './routes/Products'
 import { getProducts, getProductsByCategory } from './loader/ProductsLoader'
 import Home from './routes/Home'
+import ProductDetails from './routes/ProductDetails'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         path: 'products/category/:categoryId',
         element: <Products />,
         loader: getProductsByCategory
+      },
+      {
+        path: 'products/:productId',
+        element: <ProductDetails />
       }
     ]
   }
