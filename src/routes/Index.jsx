@@ -1,12 +1,15 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 
 export default function Index() {
   return (
     <>
       <div>
         <div className="navbar bg-primary text-primary-content">
-          <div className="flex-1">
-            <a className="btn btn-ghost text-xl">Shopping Cart</a>
+          <div className="flex-1 gap-2 items-center flex">
+            <Link to="/" className="text-2xl font-bold mx-4">
+              Shopping Cart
+            </Link>
+            <Link to="/products">Products</Link>
           </div>
           <div className="flex-none">
             <div className="dropdown dropdown-end">
