@@ -1,8 +1,9 @@
 import { useLoaderData } from 'react-router-dom'
+import { useState } from 'react'
 
 export default function ProductDetails() {
   const product = useLoaderData()
-  console.log(product)
+  const [quantity, setQuantity] = useState(1)
 
   return (
     <div className="flex justify-center mt-8 mx-4">
@@ -17,8 +18,28 @@ export default function ProductDetails() {
         <div className="card-body">
           <h2 className="card-title">{product.title}</h2>
           <p>{product.description}</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+          <div className="card-actions justify-end items-end">
+            <div className="join mr-4">
+              <button
+                className="btn btn-sm join-item border-solid border-slate-300"
+                onClick={() => {
+                  if (quantity > 1) setQuantity(quantity - 1)
+                }}
+              >
+                -
+              </button>
+              <div className="join-item min-w-8 border-solid border-slate-300 border flex justify-center items-center">
+                {quantity}
+              </div>
+              <button
+                id="quantity"
+                className="btn btn-sm join-item border-solid border-slate-300"
+                onClick={() => setQuantity(quantity + 1)}
+              >
+                +
+              </button>
+            </div>
+            <button className="btn btn-primary">Add to Cart</button>
           </div>
         </div>
       </div>
