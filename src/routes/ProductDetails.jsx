@@ -6,12 +6,12 @@ export default function ProductDetails() {
 
   return (
     <div className="flex justify-center mt-8 mx-4">
-      <div className="card sm:card-side bg-base-100 shadow-xl max-w-4xl">
-        <figure className="w-96 h-96">
+      <div className="card sm:card-side bg-base-100 shadow-xl max-w-4xl items-center">
+        <figure className="w-96 h-96 sm:ms-8">
           <img
             src={product.image}
             alt="Album"
-            className="object-contain w-96 h-96"
+            className="object-contain w-full h-full"
           />
         </figure>
         <div className="card-body">
