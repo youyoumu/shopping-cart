@@ -1,20 +1,15 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
 import ProductCard from './ProductCard'
+import { useLoaderData } from 'react-router-dom'
+
+export async function loader() {
+  const res = await fetch('https://fakestoreapi.com/products')
+  const data = await res.json()
+  console.log(data)
+  return data
+}
 
 export default function Products() {
-  const [data, setData] = useState(null)
-
-  async function getAllProducts() {
-    const res = await fetch('https://fakestoreapi.com/products')
-    const data = await res.json()
-    console.log(data)
-    setData(data)
-  }
-
-  useEffect(() => {
-    getAllProducts()
-  }, [])
+  const data = useLoaderData()
 
   if (!data) return <h1>Loading...</h1>
 

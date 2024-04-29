@@ -4,7 +4,7 @@ import './index.css'
 import Index from './routes/Index'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './ErrorPage'
-import Products from './routes/Products'
+import Products, { loader as productsLoader } from './routes/Products'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +14,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'products',
+        element: <Products />,
+        loader: productsLoader
+      },
+      {
+        path: 'products/category/:categoryId',
         element: <Products />
       }
     ]
