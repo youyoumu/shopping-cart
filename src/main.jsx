@@ -5,7 +5,11 @@ import Index from './routes/Index'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './ErrorPage'
 import Products from './routes/Products'
-import { getProducts, getProductsByCategory } from './loader/ProductsLoader'
+import {
+  getProducts,
+  getProductsByCategory,
+  getProductsById
+} from './loader/ProductsLoader'
 import Home from './routes/Home'
 import ProductDetails from './routes/ProductDetails'
 
@@ -31,7 +35,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'products/:productId',
-        element: <ProductDetails />
+        element: <ProductDetails />,
+        loader: getProductsById
       }
     ]
   }

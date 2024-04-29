@@ -11,3 +11,11 @@ export async function getProductsByCategory({ params }) {
   const data = await res.json()
   return data
 }
+
+export async function getProductsById({ params }) {
+  const res = await fetch(
+    `https://fakestoreapi.com/products/${params.productId}`
+  )
+  const data = await res.json()
+  return data
+}
