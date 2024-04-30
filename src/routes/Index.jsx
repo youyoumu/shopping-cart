@@ -2,7 +2,10 @@ import { Outlet, Link } from 'react-router-dom'
 import { useState } from 'react'
 
 export default function Index() {
-  const [cart, setCart] = useState({})
+  const [cart, setCart] = useState({
+    1: { id: 1, quantity: 2 },
+    2: { id: 2, quantity: 5 }
+  })
 
   return (
     <>
