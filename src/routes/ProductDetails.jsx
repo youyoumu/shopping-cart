@@ -19,6 +19,10 @@ export default function ProductDetails() {
           <h2 className="card-title">{product.title}</h2>
           <p>{product.description}</p>
           <div className="card-actions justify-end items-end">
+            <div className="mr-4">
+              <p className="text-lg font-medium">${product.price}</p>
+              <p className="text-sm">{`★${product.rating.rate} | ${product.rating.count}`}</p>
+            </div>
             <div className="join mr-4">
               <button
                 className="btn btn-sm join-item border-solid border-slate-300"
