@@ -9,9 +9,9 @@ export default function CartOverview() {
   ))
 
   return (
-    <>
-      <h1>Cart Overview</h1>
-      {CartProducts}
-    </>
+    <div className="max-w-2xl mx-auto">
+      <h1 className="text-4xl font-bold text-center mt-4">Cart Overview</h1>
+      <div className="mt-8 grid gap-4 mx-2">{CartProducts}</div>
+    </div>
   )
 }
