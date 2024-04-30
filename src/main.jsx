@@ -12,6 +12,7 @@ import {
 } from './loader/ProductsLoader'
 import Home from './routes/Home'
 import ProductDetails from './routes/ProductDetails'
+import CartOverview from './routes/CartOverview'
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         path: 'products/:productId',
         element: <ProductDetails />,
         loader: getProductsById
+      },
+      {
+        path: 'cart',
+        element: <CartOverview />
       }
     ]
   }
