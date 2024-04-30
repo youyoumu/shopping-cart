@@ -1,6 +1,9 @@
 import { Outlet, Link } from 'react-router-dom'
+import { useState } from 'react'
 
 export default function Index() {
+  const [cart, setCart] = useState({})
+
   return (
     <>
       <div>
@@ -111,7 +114,7 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <Outlet />
+      <Outlet context={[cart, setCart]} />
     </>
   )
 }

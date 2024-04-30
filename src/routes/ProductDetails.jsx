@@ -1,9 +1,19 @@
 import { useLoaderData } from 'react-router-dom'
 import { useState } from 'react'
+import { useOutletContext } from 'react-router-dom'
 
 export default function ProductDetails() {
   const product = useLoaderData()
   const [quantity, setQuantity] = useState(1)
+  const [cart, setCart] = useOutletContext()
+  const addToCart = () => {
+    const newQuantity = cart[product.id]
+      ? cart[product.id] + quantity
+      : quantity
+
+    setCart({ ...cart, [product.id]: newQuantity })
+    setQuantity(1)
+  }
 
   return (
     <div className="flex justify-center mt-8 mx-4">
@@ -43,7 +53,9 @@ export default function ProductDetails() {
                 +
               </button>
             </div>
-            <button className="btn btn-primary">Add to Cart</button>
+            <button className="btn btn-primary" onClick={addToCart}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
