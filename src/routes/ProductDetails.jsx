@@ -8,10 +8,13 @@ export default function ProductDetails() {
   const [cart, setCart] = useOutletContext()
   const addToCart = () => {
     const newQuantity = cart[product.id]
-      ? cart[product.id] + quantity
+      ? cart[product.id].quantity + quantity
       : quantity
 
-    setCart({ ...cart, [product.id]: newQuantity })
+    setCart({
+      ...cart,
+      [product.id]: { id: product.id, quantity: newQuantity }
+    })
     setQuantity(1)
   }
 
