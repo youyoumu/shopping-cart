@@ -15,7 +15,7 @@ export default function Index() {
             <Link to="/" className="text-2xl font-bold mx-4">
               Shopping Cart
             </Link>
-            <Link to="/products">Products</Link>
+            <Link to="/products">All Products</Link>
             <div className="dropdown dropdown-hover">
               <div tabIndex={0} role="button">
                 Category
