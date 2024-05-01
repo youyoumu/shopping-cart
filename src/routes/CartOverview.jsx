@@ -64,6 +64,9 @@ export default function CartOverview() {
       <div className="text-3xl font-bold text-end mt-8">
         Total: ${totalPrice()}
       </div>
+      <div className="text-end mt-8">
+        <button className="btn btn-primary btn-lg">Checkout</button>
+      </div>
     </div>
   )
 }
