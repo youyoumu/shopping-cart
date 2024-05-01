@@ -10,8 +10,8 @@ export default function Index() {
   return (
     <>
       <div>
-        <div className="navbar bg-primary text-primary-content">
-          <div className="flex-1 gap-2 items-center flex">
+        <div className="navbar bg-primary text-primary-content justify-center">
+          <div className="flex-1 gap-2 items-center flex max-w-6xl">
             <Link to="/" className="text-2xl font-bold mx-4">
               Shopping Cart
             </Link>
