@@ -24,7 +24,9 @@ export default function ProductCard({
             <p className="text-sm">{`★${rating.rate} | ${rating.count}`}</p>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary btn-sm">Buy Now</button>
+            <Link to={`/products/${id}`} className="btn btn-primary btn-sm">
+              Buy Now
+            </Link>
           </div>
         </div>
       </div>
