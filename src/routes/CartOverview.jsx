@@ -44,6 +44,8 @@ export default function CartOverview() {
       key={product.id}
       product={product}
       quantity={cart[product.id].quantity}
+      cart={cart}
+      setCart={setCart}
     />
   ))
 
