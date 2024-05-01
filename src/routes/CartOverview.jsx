@@ -4,11 +4,15 @@ import { useState, useEffect } from 'react'
 
 export default function CartOverview() {
   const [cart, setCart] = useOutletContext()
-  const [productsData, setProductsData] = useState([]) // [productData]
+  const [productsData, setProductsData] = useState([])
+
+  const cartWithoutQuantity = Object.values(cart).map((product) => {
+    return { id: product.id }
+  })
 
   useEffect(() => {
     const fetches = []
-    Object.values(cart).forEach((product) => {
+    cartWithoutQuantity.forEach((product) => {
       const getProductData = async function () {
         const res = await fetch(
           `https://fakestoreapi.com/products/${product.id}`
@@ -22,7 +26,7 @@ export default function CartOverview() {
     Promise.all(fetches).then((data) => {
       setProductsData(data)
     })
-  }, [cart])
+  }, [cartWithoutQuantity])
 
   if (productsData.length === 0) return <h1>Loading...</h1>
 
