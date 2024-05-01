@@ -5,10 +5,19 @@ import { useState, useEffect } from 'react'
 export default function CartOverview() {
   const [cart, setCart] = useOutletContext()
   const [productsData, setProductsData] = useState([])
+  const [cartWithoutQuantity, setCartWithoutQuantity] = useState(
+    Object.values(cart).map((product) => {
+      return { id: product.id }
+    })
+  )
 
-  const cartWithoutQuantity = Object.values(cart).map((product) => {
-    return { id: product.id }
-  })
+  useEffect(() => {
+    setCartWithoutQuantity(
+      Object.values(cart).map((product) => {
+        return { id: product.id }
+      })
+    )
+  }, [cart.length])
 
   useEffect(() => {
     const fetches = []
