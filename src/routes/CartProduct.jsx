@@ -26,19 +26,24 @@ export default function CartProduct({ product }) {
           <div>
             <p className="text-lg font-medium">${productData.price}</p>
           </div>
-          <div className="join mr-4">
-            <button className="btn btn-sm join-item border-solid border-slate-300">
-              -
-            </button>
-            <div className="join-item min-w-8 border-solid border-slate-300 border flex justify-center items-center">
-              {product.quantity}
+          <div className="flex justify-between items-center">
+            <div className="join mr-4">
+              <button className="btn btn-sm join-item border-solid border-slate-300">
+                -
+              </button>
+              <div className="join-item min-w-8 border-solid border-slate-300 border flex justify-center items-center">
+                {product.quantity}
+              </div>
+              <button
+                id="quantity"
+                className="btn btn-sm join-item border-solid border-slate-300"
+              >
+                +
+              </button>
             </div>
-            <button
-              id="quantity"
-              className="btn btn-sm join-item border-solid border-slate-300"
-            >
-              +
-            </button>
+            <div className="text-lg font-semibold">{`$${
+              product.quantity * productData.price
+            }`}</div>
           </div>
           <div className="card-actions justify-end"></div>
         </div>
