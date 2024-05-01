@@ -37,7 +37,12 @@ export default function CartOverview() {
     })
   }, [cartWithoutQuantity])
 
-  if (productsData.length === 0) return <h1>Loading...</h1>
+  if (productsData.length === 0)
+    return (
+      <div className="flex justify-center h-screen items-center">
+        <h1 className="text-4xl">Loading...</h1>
+      </div>
+    )
 
   const CartProducts = productsData.map((product) => (
     <CartProduct
